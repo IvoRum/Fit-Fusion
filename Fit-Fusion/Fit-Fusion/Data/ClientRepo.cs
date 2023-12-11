@@ -7,7 +7,7 @@ public class ClientRepo
 {
     string connectionString = "Server=ep-lively-queen-99751851.eu-central-1.aws.neon.tech; Database =Fit_Fusion; Username =IvoRum; Password=RXvnYfB9m1Uz;";
     
-    public string getClientInfo()
+    public string GetClientInfo()
     {
         using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
@@ -33,8 +33,9 @@ public class ClientRepo
         return null;
     }
 
-    public void getWorkerStats()
+    public List<Worker> GetWorkerStats()
     {
+        List<Worker> workers = new List<Worker>();
         using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             connection.Open();
@@ -49,18 +50,25 @@ public class ClientRepo
                 {
                     while (reader.Read())
                     {
-                        // Access data using reader
-                        Console.WriteLine(reader["first_name"]);
+                        string firstName=reader["first_name"].ToString();
+                        string lastName = reader["last_name"].ToString();
+                        int salary = reader.GetInt32(reader.GetOrdinal("amount"));
+                        DateTime date = reader.GetDateTime(reader.GetOrdinal("first_work_day_date"));
+                        string title = reader["title"].ToString();
+                        
+                        workers.Add( new Worker(firstName,lastName,salary,title,date));
                     }
                 }
             }
-    
             connection.Close();
         }
+
+        return workers;
     }
     
-    public void getBalance()
+    public List<Balance> GetBalance()
     {
+        List<Balance> balances = new List<Balance>();
         using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
             connection.Open();
@@ -72,19 +80,24 @@ public class ClientRepo
             {
                 using (NpgsqlDataReader reader = command.ExecuteReader())
                 {
+
                     while (reader.Read())
                     {
                         // Access data using reader
                         Console.WriteLine(reader["first_name"]);
+                        string name = reader["name"].ToString();
+                        int netIncome = reader.GetInt32(reader.GetOrdinal("net_income"));
+                        DateTime date = reader.GetDateTime(reader.GetOrdinal("date"));
+                        balances.Add( new Balance(date,netIncome,name));
                     }
                 }
             }
-    
             connection.Close();
         }
+        return balances;
     }
 
-    public Worker getWorkerWhitHiestSalaray()
+    public Worker GetWorkerWhitHiestSalaray()
     {
         using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
         {
@@ -101,7 +114,6 @@ public class ClientRepo
                 {
                     while (reader.Read())
                     {
-                        // Access data using reader
                         string firstName=reader["first_name"].ToString();
                         string lastName = reader["last_name"].ToString();
                         int salary = reader.GetInt32(reader.GetOrdinal("amount"));
