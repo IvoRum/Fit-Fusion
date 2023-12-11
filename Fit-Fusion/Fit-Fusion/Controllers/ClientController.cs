@@ -17,8 +17,7 @@ namespace Fit_Fusion.Controllers
         public ActionResult<string> Index()
         {
             ClientRepo clientRepo = new ClientRepo();
-            clientRepo.getClientInfo();
-            return "alo da";
+            return clientRepo.getClientInfo();
         }
     }
 }
