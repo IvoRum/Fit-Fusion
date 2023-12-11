@@ -83,8 +83,6 @@ public class ClientRepo
 
                     while (reader.Read())
                     {
-                        // Access data using reader
-                        Console.WriteLine(reader["first_name"]);
                         string name = reader["name"].ToString();
                         int netIncome = reader.GetInt32(reader.GetOrdinal("net_income"));
                         DateTime date = reader.GetDateTime(reader.GetOrdinal("date"));
