@@ -19,16 +19,20 @@ namespace Fit_Fusion.Controllers
         {
             ClientRepo repo = new ClientRepo();
             return repo.GetWorkerWhitHiestSalaray();
-            //return new string[] { "value1", "value2" };
         }
         
-        // GET: api/Worker
+        [HttpGet("/lowes/salary")]
+        public ActionResult<Worker> GetLowestSalary()
+        {
+            ClientRepo repo = new ClientRepo();
+            return repo.GetWorkerWhitLowestSalaray();
+        }
+        
         [HttpGet]
         public ActionResult<IEnumerable<Worker>> Get()
         {
             ClientRepo repo = new ClientRepo();
             return repo.GetWorkerStats();
-            //return new string[] { "value1", "value2" };
         }
     }
 }

@@ -24,4 +24,12 @@ export class WorkerServiceService {
       `https://localhost:44358/daylyVisistation`
     );
   }
+
+  fetchHiestPayroll(): Observable<Worler> {
+    return this.http.get<Worler>(`https://localhost:44358/highest/salary`);
+  }
+
+  fetchLowestPayroll(): Observable<Worler> {
+    return this.http.get<Worler>(`https://localhost:44358/lowes/salary`);
+  }
 }

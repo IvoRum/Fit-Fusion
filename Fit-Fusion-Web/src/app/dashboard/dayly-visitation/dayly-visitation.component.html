@@ -1,0 +1,29 @@
+<h1>Dayley Visistations</h1>
+<table mat-table [dataSource]="daylyVisistors" class="mat-elevation-z8">
+  <ng-container matColumnDef="Name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="Family Name">
+    <th mat-header-cell *matHeaderCellDef>Family Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="Subsctiption">
+    <th mat-header-cell *matHeaderCellDef>Subsctiption</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.subscriptionName }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Subsctiption Price">
+    <th mat-header-cell *matHeaderCellDef>Subsctiption Price</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.subscriptionPrice }}
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedBalanceColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedBalanceColumns"></tr>
+</table>

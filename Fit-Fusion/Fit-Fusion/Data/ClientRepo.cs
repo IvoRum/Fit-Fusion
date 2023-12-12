@@ -125,6 +125,37 @@ public class ClientRepo
         }
         return null;
     }
+    
+    public Worker GetWorkerWhitLowestSalaray()
+    {
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            connection.Open();
+            string query =
+                "select salary.amount, w.first_name, w.last_name " +
+                "from salary" +
+                "         join public.worker w on w.id = salary.worker " +
+                "order by salary.amount asc " +
+                "limit 1";
+            using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+            {
+                using (NpgsqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string firstName=reader["first_name"].ToString();
+                        string lastName = reader["last_name"].ToString();
+                        int salary = reader.GetInt32(reader.GetOrdinal("amount"));
+
+                        return new Worker(firstName,lastName,salary);
+                    }
+                }
+            }
+    
+            connection.Close();
+        }
+        return null;
+    }
 
     
     public List<DaylyVisitation> GetDaylyOtchet()
