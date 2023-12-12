@@ -14,13 +14,19 @@ namespace Fit_Fusion.Controllers
     public class BalanceController : ControllerBase
     {
         
-        // GET: api/Worker
         [HttpGet]
         public ActionResult<IEnumerable<Balance>> Get()
         {
             ClientRepo repo = new ClientRepo();
             return repo.GetBalance();
             //return new string[] { "value1", "value2" };
+        }
+        
+        [HttpGet("/daylyVisistation")]
+        public ActionResult<IEnumerable<DaylyVisitation>> GetDaylyVisistation()
+        {
+            ClientRepo repo = new ClientRepo();
+            return repo.GetDaylyOtchet();
         }
     }
 }

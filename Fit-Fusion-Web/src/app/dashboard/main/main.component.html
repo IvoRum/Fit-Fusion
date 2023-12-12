@@ -4,67 +4,19 @@
   fxLayoutGap.xs="0"
   fxLayoutGap="5px"
 >
-  <div fxFlex="40%">
-    <h1>Workers</h1>
-    <table mat-table [dataSource]="worker" class="mat-elevation-z8">
-      <ng-container matColumnDef="First Name">
-        <th mat-header-cell *matHeaderCellDef>First Name</th>
-        <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="Last Name">
-        <th mat-header-cell *matHeaderCellDef>Last Name</th>
-        <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="Slary">
-        <th mat-header-cell *matHeaderCellDef>Slary</th>
-        <td mat-cell *matCellDef="let element">{{ element.salary }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="Title">
-        <th mat-header-cell *matHeaderCellDef>Title</th>
-        <td mat-cell *matCellDef="let element">
-          {{ element.title }}
-        </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns1"></tr>
-    </table>
-  </div>
-  <div fxFlex="40%">
-    <h1>Balance</h1>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-      <ng-container matColumnDef="Date">
-        <th mat-header-cell *matHeaderCellDef>Date</th>
-        <td mat-cell *matCellDef="let element">{{ element.date }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="Net Income">
-        <th mat-header-cell *matHeaderCellDef>Net Income</th>
-        <td mat-cell *matCellDef="let element">{{ element.netIncome }}</td>
-      </ng-container>
-
-      <ng-container matColumnDef="Conclusion">
-        <th mat-header-cell *matHeaderCellDef>Conclusion</th>
-        <td mat-cell *matCellDef="let element">
-          {{ element.name }}
-        </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedBalanceColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedBalanceColumns"></tr>
-    </table>
-
-    <mat-paginator
-      [pageSizeOptions]="[5, 10, 20]"
-      showFirstLastButtons
-      aria-label="Select page of periodic elements"
+  <div fxFlex="40%">helo</div>
+  <div fxFlex="60%">
+    <div
+      fxLayout="row wrap"
+      fxLayoutAlign="center"
+      fxLayoutGap.xs="0"
+      fxLayoutGap="5px"
     >
-    </mat-paginator>
+      <div fxFlex="40%"><app-worker></app-worker></div>
+      <div fxFlex="40%"><app-balance></app-balance></div>
+      <div fxFlex="40%">Visitations</div>
+      <div fxFlex="40%">Worker hith hiest and lowest salary</div>
+      <div fxFlex="40%">Chart</div>
+    </div>
   </div>
-  <div fxFlex="40%">Visitations</div>
-  <div fxFlex="40%">Worker hith hiest and lowest salary</div>
-  <div fxFlex="40%">Chart</div>
 </div>

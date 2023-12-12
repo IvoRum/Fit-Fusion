@@ -123,8 +123,41 @@ public class ClientRepo
     
             connection.Close();
         }
-
         return null;
     }
 
+    
+    public List<DaylyVisitation> GetDaylyOtchet()
+    {
+        List<DaylyVisitation> daylyVisitations = new List<DaylyVisitation>();
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            connection.Open();
+            string query =
+                "select c.first_name,c.last_name,s.name,s.price " +
+                "from client_visitation cl " +
+                "join public.client c on c.id = cl.client " +
+                "join public.subscription s on s.id = c.sub_type " +
+                "where date=CURRENT_DATE;";
+            using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+            {
+                using (NpgsqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string subscriptionName = reader["name"].ToString();
+                        string firstName=reader["first_name"].ToString();
+                        string lastName = reader["last_name"].ToString();
+                        int price = reader.GetInt32(reader.GetOrdinal("price"));
+
+                        daylyVisitations.Add(new DaylyVisitation(firstName,lastName,
+                        subscriptionName,price));
+                    }
+                }
+            }
+    
+            connection.Close();
+        }
+        return daylyVisitations;
+    }
 }

@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Worler } from 'src/model/Worker';
 import { HttpClient } from '@angular/common/http';
 import { Balance } from 'src/model/Balance';
+import { DaylyVisistation } from 'src/model/DaylyVisistation';
 
 @Injectable({
   providedIn: 'root',
@@ -16,5 +17,11 @@ export class WorkerServiceService {
 
   fetchBalance(): Observable<Balance[]> {
     return this.http.get<Balance[]>(`http://localhost:45162/api/Balance`);
+  }
+
+  fetchDaylyVisitors(): Observable<DaylyVisistation[]> {
+    return this.http.get<DaylyVisistation[]>(
+      `https://localhost:44358/daylyVisistation`
+    );
   }
 }
