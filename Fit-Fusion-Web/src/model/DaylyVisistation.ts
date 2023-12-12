@@ -3,5 +3,4 @@ export interface DaylyVisistation {
   lastName: string;
   subscriptionName: string;
   subscriptionPrice: number;
-  firstWorkDayDate: Date;
 }

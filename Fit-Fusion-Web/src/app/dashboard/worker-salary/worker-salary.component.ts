@@ -9,12 +9,16 @@ import { WorkerServiceService } from 'src/service/worker-service.service';
 })
 export class WorkerSalaryComponent implements OnInit {
   worlers!: Worler;
+  worlersLow!: Worler;
 
   constructor(private workerService: WorkerServiceService) {}
 
   ngOnInit(): void {
     this.workerService.fetchHiestPayroll().subscribe((data) => {
       this.worlers = data;
+    });
+    this.workerService.fetchLowestPayroll().subscribe((data) => {
+      this.worlersLow = data;
     });
   }
 }
