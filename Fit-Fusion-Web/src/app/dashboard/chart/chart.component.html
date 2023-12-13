@@ -1,5 +1,8 @@
 <h1>Chart</h1>
-<div style="display: block">
+<div
+  *ngFor="let item of [].constructor(7); let i = index"
+  style="display: block"
+>
   <canvas
     baseChart
     [datasets]="chartData"
