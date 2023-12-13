@@ -191,4 +191,120 @@ public class ClientRepo
         }
         return daylyVisitations;
     }
+             public List<DaylyVisitation> GetMontlyOtchet()
+             {
+                 List<DaylyVisitation> daylyVisitations = new List<DaylyVisitation>();
+                 using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+                 {
+                     connection.Open();
+                     string query =
+                         "    select cl.date,c.first_name,c.last_name,s.name,s.price" +
+                         "    from client_visitation cl" +
+                         "             join public.client c on c.id = cl.client" +
+                         "             join public.subscription s on s.id = c.sub_type" +
+                         "    where (EXTRACT(MONTH FROM  date))=(EXTRACT(MONTH FROM  CURRENT_DATE));";
+                     using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                     {
+                         using (NpgsqlDataReader reader = command.ExecuteReader())
+                         {
+                             while (reader.Read())
+                             {
+                                 string subscriptionName = reader["name"].ToString();
+                                 string firstName=reader["first_name"].ToString();
+                                 string lastName = reader["last_name"].ToString();
+                                 int price = reader.GetInt32(reader.GetOrdinal("price"));
+
+                                 daylyVisitations.Add(new DaylyVisitation(firstName,lastName,
+                                     subscriptionName,price));
+                             }
+                         }
+                     }
+    
+                     connection.Close();
+                 }
+                 return daylyVisitations;
+             }
+             
+             public HalfYearRetun GetHalfAYearsOtchet()
+             {
+                 HalfYearRetun halfYearRetun = new HalfYearRetun();
+                 
+                 string year = "2023-06-17";
+                 List<string> allQuerys = new List<string>() { six,seven,eatch,nine,ten,aves,tlave};
+                 using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+                 {
+                     connection.Open();
+                     foreach (var VARIABLE in allQuerys)
+                     {
+                         using (NpgsqlCommand command = new NpgsqlCommand(VARIABLE, connection))
+                         { List<DaylyVisitationCount> daylyVisitations = new List<DaylyVisitationCount>();
+                             using (NpgsqlDataReader reader = command.ExecuteReader())
+                             {
+                                
+                                 while (reader.Read())
+                                 {
+                                     string subscriptionName = reader["name"].ToString();
+                                     string firstName = reader["first_name"].ToString();
+                                     string lastName = reader["last_name"].ToString();
+                                     int price = reader.GetInt32(reader.GetOrdinal("price"));
+                                     int count = reader.GetInt32(reader.GetOrdinal("visiations"));
+                                     daylyVisitations.Add( new DaylyVisitationCount(firstName, lastName,
+                                         subscriptionName, price, count));
+                                 }
+                             }
+
+                             halfYearRetun.addMontlyResult(daylyVisitations);
+                             command.Dispose();
+                         }
+                         
+                     }
+
+                     connection.Close();
+                 }
+                 return halfYearRetun;
+             }   
+             
+             const string six="select c.first_name,c.last_name,s.name,s.price,count(cl.date) as visiations " +
+                              "from client_visitation cl " +
+                              "         join public.client c on c.id = cl.client " +
+                              "         join public.subscription s on s.id = c.sub_type " +
+                              "where (EXTRACT(MONTH FROM  date))=(EXTRACT(MONTH FROM TIMESTAMP '2023-06-17')) " +
+                              "group by s.price, s.name, c.last_name, c.first_name;";
+             const string seven="select c.first_name,c.last_name,s.name,s.price,count(cl.date) as visiations " +
+                                "from client_visitation cl " +
+                                "         join public.client c on c.id = cl.client " +
+                                "         join public.subscription s on s.id = c.sub_type " +
+                                "where (EXTRACT(MONTH FROM  date))=(EXTRACT(MONTH FROM TIMESTAMP '2023-07-17')) " +
+                                "group by s.price, s.name, c.last_name, c.first_name;";
+             const string eatch="select c.first_name,c.last_name,s.name,s.price,count(cl.date) as visiations " +
+                                "from client_visitation cl " +
+                                "         join public.client c on c.id = cl.client " +
+                                "         join public.subscription s on s.id = c.sub_type " +
+                                "where (EXTRACT(MONTH FROM  date))=(EXTRACT(MONTH FROM TIMESTAMP '2023-08-17')) " +
+                                "group by s.price, s.name, c.last_name, c.first_name;";
+             const string nine="select c.first_name,c.last_name,s.name,s.price,count(cl.date) as visiations " +
+                                "from client_visitation cl " +
+                                "         join public.client c on c.id = cl.client " +
+                                "         join public.subscription s on s.id = c.sub_type " +
+                                "where (EXTRACT(MONTH FROM  date))=(EXTRACT(MONTH FROM TIMESTAMP '2023-09-17')) " +
+                                "group by s.price, s.name, c.last_name, c.first_name;";
+
+             private const string ten = "select c.first_name,c.last_name,s.name,s.price,count(cl.date) as visiations " +
+                                        "from client_visitation cl " +
+                                        "         join public.client c on c.id = cl.client " +
+                                        "         join public.subscription s on s.id = c.sub_type " +
+                                        "where (EXTRACT(MONTH FROM  date))=(EXTRACT(MONTH FROM TIMESTAMP '2023-10-17')) " +
+                                        "group by s.price, s.name, c.last_name, c.first_name;";
+             const string aves="select c.first_name,c.last_name,s.name,s.price,count(cl.date) as visiations " +
+                               "from client_visitation cl " +
+                               "         join public.client c on c.id = cl.client " +
+                               "         join public.subscription s on s.id = c.sub_type " +
+                               "where (EXTRACT(MONTH FROM  date))=(EXTRACT(MONTH FROM TIMESTAMP '2023-11-17')) " +
+                               "group by s.price, s.name, c.last_name, c.first_name;";
+             const string tlave="select c.first_name,c.last_name,s.name,s.price,count(cl.date) as visiations " +
+                               "from client_visitation cl " +
+                               "         join public.client c on c.id = cl.client " +
+                               "         join public.subscription s on s.id = c.sub_type " +
+                               "where (EXTRACT(MONTH FROM  date))=(EXTRACT(MONTH FROM TIMESTAMP '2023-12-17')) " +
+                               "group by s.price, s.name, c.last_name, c.first_name;";
 }

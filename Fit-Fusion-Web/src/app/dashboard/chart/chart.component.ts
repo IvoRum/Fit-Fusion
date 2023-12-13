@@ -26,10 +26,27 @@ export class ChartComponent implements OnInit {
       this.labels = this.daylyVisistors.map((item) => item.firstName);
       console.log(this.subscriptionPrice);
       console.log(this.labels);
-      this.chartData = [{ data: this.subscriptionPrice, label: 'Series A' }];
+      //this.chartData = [{ data: this.subscriptionPrice, label: 'Daly Visits' }];
+    });
+
+    this.workerService.fetchDaylyVisitors().subscribe((data) => {
+      this.daylyVisistors = data;
+
+      this.subscriptionPrice1 = this.daylyVisistors.map(
+        (item) => item.subscriptionPrice
+      );
+      this.labels = this.daylyVisistors.map((item) => item.firstName);
+      console.log(this.subscriptionPrice);
+      console.log(this.labels);
+      this.chartData = [
+        { data: this.subscriptionPrice1, label: 'Daly Visits' },
+        { data: this.subscriptionPrice, label: 'Mothly Visits' },
+      ];
     });
   }
   chartData!: any[];
+  clientDates: Date[] = [];
+  subscriptionPrice1: number[] = [];
   subscriptionPrice: number[] = [23, 32];
   labels: String[] = ['1', '2'];
 

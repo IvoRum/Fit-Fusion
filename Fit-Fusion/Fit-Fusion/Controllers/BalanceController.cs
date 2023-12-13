@@ -28,5 +28,19 @@ namespace Fit_Fusion.Controllers
             ClientRepo repo = new ClientRepo();
             return repo.GetDaylyOtchet();
         }
+        
+        [HttpGet("/mothlyVisistation")]
+        public ActionResult<IEnumerable<DaylyVisitation>> GetmothlyVisistation()
+        {
+            ClientRepo repo = new ClientRepo();
+            return repo.GetMontlyOtchet();
+        }
+        
+        [HttpGet("/halfAYear")]
+        public ActionResult<HalfYearRetun> GethalfAYear()
+        {
+            ClientRepo repo = new ClientRepo();
+            return repo.GetHalfAYearsOtchet();
+        }
     }
 }

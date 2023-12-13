@@ -25,6 +25,12 @@ export class WorkerServiceService {
     );
   }
 
+  fetchMothlyVisitors(): Observable<DaylyVisistation[]> {
+    return this.http.get<DaylyVisistation[]>(
+      `https://localhost:44358/mothlyVisistation`
+    );
+  }
+
   fetchHiestPayroll(): Observable<Worler> {
     return this.http.get<Worler>(`https://localhost:44358/highest/salary`);
   }
