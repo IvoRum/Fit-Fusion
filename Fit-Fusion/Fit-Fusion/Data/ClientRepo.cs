@@ -225,9 +225,10 @@ public class ClientRepo
                  return daylyVisitations;
              }
              
-             public HalfYearRetun GetHalfAYearsOtchet()
+             public List<ChartVisitorsMoths> GetHalfAYearsOtchet()
              {
-                 HalfYearRetun halfYearRetun = new HalfYearRetun();
+                 List<ChartVisitorsMoths> visitorsMothsList = new List<ChartVisitorsMoths>();
+                 
                  
                  string year = "2023-06-17";
                  List<string> allQuerys = new List<string>() { six,seven,eatch,nine,ten,aves,tlave};
@@ -237,7 +238,10 @@ public class ClientRepo
                      foreach (var VARIABLE in allQuerys)
                      {
                          using (NpgsqlCommand command = new NpgsqlCommand(VARIABLE, connection))
-                         { List<DaylyVisitationCount> daylyVisitations = new List<DaylyVisitationCount>();
+                         {
+                             List<int> visitations = new List<int>();
+                             List<string> visitors = new List<string>();
+                             List<ChartVisitorsMoths> mothlyVisitors = new List<ChartVisitorsMoths>();
                              using (NpgsqlDataReader reader = command.ExecuteReader())
                              {
                                 
@@ -248,12 +252,11 @@ public class ClientRepo
                                      string lastName = reader["last_name"].ToString();
                                      int price = reader.GetInt32(reader.GetOrdinal("price"));
                                      int count = reader.GetInt32(reader.GetOrdinal("visiations"));
-                                     daylyVisitations.Add( new DaylyVisitationCount(firstName, lastName,
-                                         subscriptionName, price, count));
+                                     visitations.Add(count);
+                                     visitors.Add(firstName);
                                  }
                              }
-
-                             halfYearRetun.addMontlyResult(daylyVisitations);
+                             visitorsMothsList.Add(new ChartVisitorsMoths(visitations,visitors));
                              command.Dispose();
                          }
                          
@@ -261,7 +264,7 @@ public class ClientRepo
 
                      connection.Close();
                  }
-                 return halfYearRetun;
+                 return visitorsMothsList;
              }   
              
              const string six="select c.first_name,c.last_name,s.name,s.price,count(cl.date) as visiations " +

@@ -7,6 +7,7 @@ import {
   HalfAYearDataList,
   MontlyVisitors,
 } from 'src/model/HalfAYearData';
+import { VisistationsChartData } from 'src/model/VisistationsChartData';
 import { WorkerServiceService } from 'src/service/worker-service.service';
 
 @Component({
@@ -16,7 +17,7 @@ import { WorkerServiceService } from 'src/service/worker-service.service';
 })
 export class ChartComponent implements OnInit {
   daylyVisistors!: DaylyVisistation[];
-  halfAYearVisitors!: HalfAYearData;
+  halfAYearVisitors!: VisistationsChartData[];
 
   public barChartOptions = {
     scaleShowVerticalLines: false,
@@ -24,7 +25,7 @@ export class ChartComponent implements OnInit {
   };
   constructor(private workerService: WorkerServiceService) {}
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.workerService.fetchDaylyVisitors().subscribe((data) => {
       this.daylyVisistors = data;
 
@@ -48,39 +49,35 @@ export class ChartComponent implements OnInit {
         { data: this.subscriptionPrice, label: 'Mothly Visits' },
       ];
     });
-    async await this.workerService
+    await this.workerService
       .fetchHalfAYearVistors()
-      .subscribe((data: HalfAYearData) => {
+      .subscribe((data: VisistationsChartData[]) => {
         this.halfAYearVisitors = data;
-
         console.log(this.halfAYearVisitors);
-      });
-  }
-  clientsData: VisistationtData[] = [];
-  setUpChartData(): any {
-    let clientsData: VisistationtData[] = [];
-    let labes: any[] = [
-      { label: 'June' },
-      { label: 'July' },
-      { label: 'August' },
-      { label: 'September' },
-      { label: 'October' },
-      { label: 'November' },
-      { label: 'December' },
-    ];
-    this.halfAYearVisitors.allClientsForHalfAyear.forEach(
-      (moth: HalfAYearDataList) => {
-        moth.listOfClients.forEach((client) => {
-          clientsData.push({
-            name: client.firstName,
-            visistations: client.count,
-          });
+        var finalData: FinalChartDataSetUp[] = [];
+        var finalLabels: string[] = [];
+        var br = 0;
+        let labes: any[] = [
+          { label: 'June' },
+          { label: 'July' },
+          { label: 'August' },
+          { label: 'September' },
+          { label: 'October' },
+          { label: 'November' },
+          { label: 'December' },
+        ];
+        this.halfAYearVisitors.forEach((item) => {
+          finalData.push({ data: item.visistations, label: labes[br].label });
+          br++;
         });
-      }
-    );
-    console.log(clientsData);
 
-    return clientsData;
+        this.labels = data[1].visitors;
+        var visitors = this.halfAYearVisitors.map((item) => item.visitors);
+
+        console.log(finalData);
+        console.log(visitors);
+        this.chartData = [finalData];
+      });
   }
 
   visistationsChartData: any[] = [];
@@ -95,12 +92,7 @@ export class ChartComponent implements OnInit {
   public barChartLegend = true;
 }
 
-export interface VisistationChartData {
-  data: string;
-  label: string;
-}
-
-export interface VisistationtData {
-  name: string;
-  visistations: number;
+export interface FinalChartDataSetUp {
+  data: any;
+  label: any;
 }

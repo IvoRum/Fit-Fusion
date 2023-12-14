@@ -4,7 +4,8 @@ import { Worler } from 'src/model/Worker';
 import { HttpClient } from '@angular/common/http';
 import { Balance } from 'src/model/Balance';
 import { DaylyVisistation } from 'src/model/DaylyVisistation';
-import { HalfAYearData } from 'src/model/HalfAYearData';
+import { HalfAYearData, HalfAYearDataList } from 'src/model/HalfAYearData';
+import { VisistationsChartData } from 'src/model/VisistationsChartData';
 
 @Injectable({
   providedIn: 'root',
@@ -32,8 +33,10 @@ export class WorkerServiceService {
     );
   }
 
-  fetchHalfAYearVistors(): Observable<HalfAYearData> {
-    return this.http.get<HalfAYearData>(`https://localhost:44358/halfAYear`);
+  fetchHalfAYearVistors(): Observable<VisistationsChartData[]> {
+    return this.http.get<VisistationsChartData[]>(
+      `https://localhost:44358/halfAYear`
+    );
   }
   fetchHiestPayroll(): Observable<Worler> {
     return this.http.get<Worler>(`https://localhost:44358/highest/salary`);

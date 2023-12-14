@@ -37,7 +37,7 @@ namespace Fit_Fusion.Controllers
         }
         
         [HttpGet("/halfAYear")]
-        public ActionResult<HalfYearRetun> GethalfAYear()
+        public List<ChartVisitorsMoths> GethalfAYear()
         {
             ClientRepo repo = new ClientRepo();
             return repo.GetHalfAYearsOtchet();
