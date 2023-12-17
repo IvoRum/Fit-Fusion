@@ -8,7 +8,7 @@ import { WorkerServiceService } from 'src/service/worker-service.service';
   styleUrls: ['./worker.component.css'],
 })
 export class WorkerComponent implements OnInit {
-  displayedColumns1: string[] = ['First Name', 'Last Name', 'Slary', 'Title'];
+  displayedColumns1: string[] = ['First Name', 'Last Name', 'Salary', 'Title'];
   worker!: Worler[];
 
   constructor(private workerService: WorkerServiceService) {}
