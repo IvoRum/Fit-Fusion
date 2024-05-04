@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "In4FcYyXckkhmXWSA2gOp9Oy9l/p9f4kO1gPLjgthwS4YZCKCSbWToCyeNsHIahw3/tdvZ92Bs4KG36iW1OsEw==",
+  "dgSpecHash": "Y5C/4un3ENJMwZITomYZVs+f/RVvwifR0BiYOB7hp8g2n5J/+4H3xSdJE04jXcs02loFj+3cESXDiV7ULqzKzw==",
   "success": true,
   "projectFilePath": "C:\\Users\\ivail\\_Spring\\Fit-Fusion\\Fit-Fusion\\Fit-Fusion-Test\\Fit-Fusion-Test.csproj",
   "expectedPackageFiles": [
@@ -235,7 +235,10 @@
     "C:\\Users\\ivail\\.nuget\\packages\\xunit.core\\2.4.2\\xunit.core.2.4.2.nupkg.sha512",
     "C:\\Users\\ivail\\.nuget\\packages\\xunit.extensibility.core\\2.4.2\\xunit.extensibility.core.2.4.2.nupkg.sha512",
     "C:\\Users\\ivail\\.nuget\\packages\\xunit.extensibility.execution\\2.4.2\\xunit.extensibility.execution.2.4.2.nupkg.sha512",
-    "C:\\Users\\ivail\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.5\\xunit.runner.visualstudio.2.4.5.nupkg.sha512"
+    "C:\\Users\\ivail\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.5\\xunit.runner.visualstudio.2.4.5.nupkg.sha512",
+    "C:\\Users\\ivail\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.18\\microsoft.netcore.app.ref.7.0.18.nupkg.sha512",
+    "C:\\Users\\ivail\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.18\\microsoft.windowsdesktop.app.ref.7.0.18.nupkg.sha512",
+    "C:\\Users\\ivail\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.18\\microsoft.aspnetcore.app.ref.7.0.18.nupkg.sha512"
   ],
   "logs": []
 }

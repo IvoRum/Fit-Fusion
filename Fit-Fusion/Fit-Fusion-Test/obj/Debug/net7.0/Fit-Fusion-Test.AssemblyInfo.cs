@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Fit-Fusion-Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c499e5b96ab79a6b41c078e16245ca1133dda0c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Fit-Fusion-Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Fit-Fusion-Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -9,3 +9,5 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Fit_Fusion_Test
 build_property.ProjectDir = C:\Users\ivail\_Spring\Fit-Fusion\Fit-Fusion\Fit-Fusion-Test\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

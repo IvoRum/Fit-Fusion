@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "j8sm8GWcvXIMnOKAq+TYcQ0BN5OnOeu9aziDDSwI0pVks5E6qsEGlqonQS7QORygZUcJLvELLIzWKP/rxghK3A==",
+  "dgSpecHash": "Wml+N5x380Ystr/O6c1nqpq1Bf2bz9u97hT7/xQgOSTYmedeYoeoGfLmoCLIV1PnrURKtsV2dvzfFz1HbVHPbQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\ivail\\_Spring\\Fit-Fusion\\Fit-Fusion\\Fit-Fusion\\Fit-Fusion.csproj",
   "expectedPackageFiles": [
@@ -226,7 +226,22 @@
     "C:\\Users\\ivail\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\ivail\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\ivail\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\ivail\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\ivail\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\ivail\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.18\\microsoft.netcore.app.ref.7.0.18.nupkg.sha512",
+    "C:\\Users\\ivail\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.18\\microsoft.windowsdesktop.app.ref.7.0.18.nupkg.sha512",
+    "C:\\Users\\ivail\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.18\\microsoft.aspnetcore.app.ref.7.0.18.nupkg.sha512",
+    "C:\\Users\\ivail\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.18\\microsoft.netcore.app.host.win-x64.7.0.18.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Data.SqlClient' 4.8.5 has a known high severity vulnerability, https://github.com/advisories/GHSA-98g6-xh36-x2p7",
+      "libraryId": "System.Data.SqlClient",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }
