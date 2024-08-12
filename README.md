@@ -1,47 +1,122 @@
-# Astro Starter Kit: Minimal
+# Week 3
 
-```sh
-npm create astro@latest -- --template minimal
-```
+1- Arms
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+1. Overhead press
+    
+    4kg-10/10/10
+    
+    ![image.png](Week%203%207717fad6190a4a8397f3f240a37e2a12/image.png)
+    
+2. Reverse fly
+    
+    3kg-10/10/10
+    
+    ![image.png](Week%203%207717fad6190a4a8397f3f240a37e2a12/image%201.png)
+    
+3. Deadlift
+    
+    10kg(12kg)-20/18/16
+    
+    ![image.png](Week%203%207717fad6190a4a8397f3f240a37e2a12/image%202.png)
+    
+4. Dumbell side raise
+    
+    3kg(2kg)-16/14/12
+    
+    ![image.png](Week%203%207717fad6190a4a8397f3f240a37e2a12/image%203.png)
+    
+5. Jump rope 5min to 8 min non-stop
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+2-Back & chest
 
-## 🚀 Project Structure
+1.  BentRows
+    
+    3kgx2(6/5kg)-8/10/12
+    
+    ![image.png](Week%203%207717fad6190a4a8397f3f240a37e2a12/image%204.png)
+    
 
-Inside of your Astro project, you'll see the following folders and files:
+2.Herkules
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+20kg-10/10/8
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+![image.png](Week%203%207717fad6190a4a8397f3f240a37e2a12/image%205.png)
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1. chest press
+    
+    5kg-10/8/6
+    
+    ![image.png](Week%203%207717fad6190a4a8397f3f240a37e2a12/image%206.png)
+    
+2. cable pull
+    
+    20kg-12/10/8
+    
+    ![image.png](Week%203%207717fad6190a4a8397f3f240a37e2a12/image%207.png)
+    
+3. Abs x3
+    1. Crunch Kicks
+    
+    ![image.png](Week%203%207717fad6190a4a8397f3f240a37e2a12/image%208.png)
+    
+    b. leg raises
+    
+    ![image.png](Week%203%207717fad6190a4a8397f3f240a37e2a12/image%209.png)
+    
+    c. Rased leg circles
+    
+    ![image.png](Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2010.png)
+    
+    d. BONUS count
+    
+    ![image.png](Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2011.png)
+    
+    BONUS BONUS 5min jump rope
+    
 
-Any static assets, like images, can be placed in the `public/` directory.
+3- Legs
 
-## 🧞 Commands
+1. Squat
 
-All commands are run from the root of the project, from a terminal:
+10kg(2x5) 12/14/16
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+![image.png](Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2012.png)
 
-## 👀 Want to learn more?
+1. Bulgerian split squat
+    
+    10kg(2x5) 12/14/16
+    
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+![image.png](Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2013.png)
+
+1. hip thrusts
+    
+    10kg 10/10/10
+    
+
+![image.png](Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2014.png)
+
+1. Hamstring curls
+    
+    15kg 12/12/12
+    
+
+![image.png](Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2015.png)
+
+1. Calf raises
+    
+    -20/20/20
+    
+
+![image.png](Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2016.png)
+
+1. Jump rope 8 min
+
+At home
+
+Streches
+
+![image.png](Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2017.png)
+
+![image.png](Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2018.png)
