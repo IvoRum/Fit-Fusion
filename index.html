@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Week 3</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7717fad6-190a-4a83-97f3-f240a37e2a12" class="page sans"><header><h1 class="page-title">Week 3</h1><p class="page-description"></p></header><div class="page-body"><div id="032bbe9d-a5e5-4087-b95f-bcc506031af4" class="column-list"><div id="26faae6a-f7a0-4947-a8f3-4a4804843fe9" style="width:33.33333333333333%" class="column"><p id="81460aec-ab6f-455e-922e-be5872541591" class="">1- Arms</p><ol type="1" id="eeb59ed3-30d5-4ead-9748-96cd6f5664f5" class="numbered-list" start="1"><li>Overhead press<p id="2b9506ea-ba84-4d40-a4ec-d0e331cb5888" class="">4kg-10/10/10</p><figure id="5ae47d02-43a8-4060-946d-77aa1f8d180d" class="image"><a href="Week%203%207717fad6190a4a8397f3f240a37e2a12/image.png"><img style="width:154px" src="Week%203%207717fad6190a4a8397f3f240a37e2a12/image.png"/></a></figure></li></ol><ol type="1" id="bd912dec-c9d1-448f-a3d2-ef995838988e" class="numbered-list" start="2"><li>Reverse fly<p id="36721635-39f4-4f63-b96f-2abb5980b026" class="">3kg-10/10/10</p><figure id="32199b8b-6444-44f2-9817-df5315d27dc5" class="image"><a href="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%201.png"><img style="width:165px" src="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%201.png"/></a></figure></li></ol><ol type="1" id="3f8db4ec-c3d1-45ab-91cd-3c0ac18381a5" class="numbered-list" start="3"><li>Deadlift<p id="826ef93a-bae4-4b10-800e-b72bca36d513" class="">10kg(12kg)-20/18/16</p><figure id="f1d959db-9aee-4517-b455-71d40fb4afc9" class="image"><a href="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%202.png"><img style="width:245px" src="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%202.png"/></a></figure></li></ol><ol type="1" id="a9388f4a-562d-4cdf-b1ba-3e0e55e0c454" class="numbered-list" start="4"><li>Dumbell side raise<p id="0a16ea31-0745-45d2-b6eb-a7c488015682" class="">3kg(2kg)-16/14/12</p><figure id="f402c59b-a686-448f-b33e-119254f40afb" class="image"><a href="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%203.png"><img style="width:169px" src="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%203.png"/></a></figure></li></ol><ol type="1" id="12261d37-fce4-4235-97c4-586f22988357" class="numbered-list" start="5"><li>Jump rope 5min to 8 min non-stop</li></ol><p id="ebdac140-c7dc-4f61-b4ac-862806e8f839" class="">
+</p></div><div id="8029fc7f-6faa-4e07-a11e-aa016308e56e" style="width:33.33333333333333%" class="column"><p id="85fcdcb9-3c92-469e-8bee-02294a235d63" class="">2-Back &amp; chest</p><ol type="1" id="7d6f2216-24a3-492b-a02c-cf1429bb68bf" class="numbered-list" start="1"><li> BentRows<p id="4b3b0aaa-6992-4628-a1a5-14958e57bee4" class="">3kgx2(6/5kg)-8/10/12</p><figure id="27990d90-2c21-43da-91b0-873a2d4d4b59" class="image"><a href="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%204.png"><img style="width:173px" src="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%204.png"/></a></figure></li></ol><p id="35697460-c7a0-451a-8223-92a9b5ef71ae" class="">2.Herkules</p><p id="2ba2c1e9-250a-4e44-abe1-814e6fbbb175" class="">20kg-10/10/8</p><figure id="159ce793-08c8-437e-b7fa-8273ccf59e20" class="image"><a href="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%205.png"><img style="width:240px" src="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%205.png"/></a></figure><ol type="1" id="7d4e8859-9cfb-4a0d-a77f-229bb2790979" class="numbered-list" start="3"><li>chest press<p id="1e040801-c5e1-4310-8228-06e5d6b5a52b" class="">5kg-10/8/6</p><figure id="6858b8ce-42a3-44ea-9342-a80d70691662" class="image"><a href="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%206.png"><img style="width:144px" src="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%206.png"/></a></figure></li></ol><ol type="1" id="d2b9f488-180e-4acd-919d-eeda73ffe426" class="numbered-list" start="4"><li>cable pull<p id="be0aef26-ab92-45cd-b97a-e53e715537e2" class="">20kg-12/10/8</p><figure id="2c785c1a-8e60-4b83-8212-47e96871cafc" class="image"><a href="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%207.png"><img style="width:271px" src="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%207.png"/></a></figure></li></ol><ol type="1" id="5e979074-b837-4dac-9155-b55f21b40c2a" class="numbered-list" start="5"><li>Abs x3<ol type="a" id="49c6dafd-a24e-41a1-aa9b-6f7867732b60" class="numbered-list" start="1"><li>Crunch Kicks</li></ol><figure id="ce1f4448-0c32-4c78-ad2b-c4cbbb59dc5c" class="image"><a href="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%208.png"><img style="width:186px" src="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%208.png"/></a></figure><p id="a1fa5c68-c672-45a9-aebc-5c53d00226aa" class="">b. leg raises</p><figure id="ba50b4b0-fb27-444a-a5c4-d5cf14ff3c77" class="image"><a href="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%209.png"><img style="width:187px" src="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%209.png"/></a></figure><p id="d01c581e-8f0f-4652-b473-6ac315a5fe46" class="">c. Rased leg circles</p><figure id="12283fcd-e36d-4390-a0e7-e8b680941c55" class="image"><a href="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2010.png"><img style="width:146px" src="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2010.png"/></a></figure><p id="ffc6d6d8-985a-41d3-92e0-8174ed2b8b7e" class="">d. BONUS count</p><figure id="7e75d664-4aa5-49e0-86e6-815b00e7595b" class="image"><a href="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2011.png"><img style="width:160px" src="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2011.png"/></a></figure><p id="2feef62d-a02c-4833-8bbe-db31cc092057" class="">BONUS BONUS 5min jump rope</p></li></ol></div><div id="8bdb7636-a3d9-4668-b899-13d7d6ba9461" style="width:33.33333333333333%" class="column"><p id="a97a9f75-336f-41e2-b19b-2fde5cca4d67" class="">3- Legs</p><ol type="1" id="278efd34-f97d-421d-88a8-c1df1c913462" class="numbered-list" start="1"><li>Squat</li></ol><p id="4169f5fc-7535-4f48-81ad-64f32dd35738" class="">10kg(2x5) 12/14/16</p><figure id="594e1293-eda7-42bc-8fd1-ad1da1ad9337" class="image"><a href="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2012.png"><img style="width:202px" src="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2012.png"/></a></figure><ol type="1" id="bc3151ec-9bbd-4a2c-94e0-90be4a2dc717" class="numbered-list" start="2"><li>Bulgerian split squat<p id="8261a266-c5a4-4e3f-ab21-8d34918e3462" class="">10kg(2x5) 12/14/16</p></li></ol><figure id="7cd30db6-bafd-48d1-a0da-d984252d2050" class="image"><a href="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2013.png"><img style="width:179px" src="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2013.png"/></a></figure><ol type="1" id="98d194ea-8f1c-4795-9033-b72a33a4b04a" class="numbered-list" start="3"><li>hip thrusts<p id="28e401a6-b678-47af-864e-cd228363aa4e" class="">10kg 10/10/10</p></li></ol><figure id="55ef1845-bfab-45d0-9ec6-81758f375156" class="image"><a href="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2014.png"><img style="width:218px" src="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2014.png"/></a></figure><ol type="1" id="05cff399-11e8-48c3-bd07-716c4c33a364" class="numbered-list" start="4"><li>Hamstring curls<p id="f9ce4842-b63a-4f1e-8195-38a98527371e" class="">15kg 12/12/12</p></li></ol><figure id="e5a7b0b4-a79b-4e65-9528-47beafb0aa76" class="image"><a href="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2015.png"><img style="width:253px" src="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2015.png"/></a></figure><ol type="1" id="ff4c450b-05a3-4d2b-b3da-b7cf7051022c" class="numbered-list" start="5"><li>Calf raises<p id="b6b5160b-6c30-4aa7-9e5f-9e2930975107" class="">-20/20/20</p></li></ol><figure id="33743c8f-3568-471c-80cc-e19f8f00b3cf" class="image"><a href="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2016.png"><img style="width:156px" src="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2016.png"/></a></figure><ol type="1" id="91faedea-1880-465d-8bb9-19c30798c610" class="numbered-list" start="6"><li>Jump rope 8 min</li></ol></div></div><p id="f866080a-6dc4-492a-8e0d-d1001c3c5b88" class="">At home</p><p id="63f19322-f29e-4bee-afed-e2bc7efc267f" class="">Streches</p><figure id="f2e198c2-8d11-483c-845e-2a4388bf5e84" class="image"><a href="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2017.png"><img style="width:1080px" src="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2017.png"/></a></figure><figure id="b14e7796-5d1b-4cb8-bcf7-c0273b59141c" class="image"><a href="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2018.png"><img style="width:474px" src="Week%203%207717fad6190a4a8397f3f240a37e2a12/image%2018.png"/></a></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
