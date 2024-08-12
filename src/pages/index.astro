@@ -1,16 +1,408 @@
 ---
-
+//import "../styles/global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<div class="mainpage">
+  <div class="container header-butt">
+    <div
+      [routerLink]="['/fitfusion/demo']"
+      class="header logo fit-fusio header-butt-element-logo"
+    >
+      Fit Fusion
+    </div>
+
+    <button
+      class="border header item-2 nav-buttons"
+      mat-button
+    >
+      Programs
+    </button>
+
+    <button
+      class="border header item-2 nav-buttons"
+      mat-button
+    >
+      Trainers
+    </button>
+    <div class="rr header-butt-element-profile">
+      <button
+        mat-fab
+        class="border item-2"
+        color="prime"
+        aria-label="Sight in"
+      >
+        person
+      </button>
+    </div>
+  </div>
+  <div class="container banner">
+    <div class="black-tint-img">
+      <div class="header item-1 get-fit-now">
+        <div class="motivatio">Get Fit Now!</div>
+        <div class="motivatio-sub-text">
+          Are you ready to transform your life and achieve
+          your fitness goals like never before? Try our
+          workout plans for free.<br />
+        </div>
+        <div>
+          <button
+            class="border bottom-button header item-7 nav-buttons"
+            mat-button
+          >
+            Sign up
+          </button>
+          <button
+            class="border bottom-button header item-7 nav-buttons"
+            mat-button
+          >
+            Services
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="main-cards">
+      <div class="border new-blog-post">
+        <div class="underline item-1 blog-head">
+          <h1>New Blog post</h1>
+        </div>
+        <img class="fitured-blog" src="img/blog1.jpg" />
+        <a>Why Women Over 30 Should Try CrossFit</a>
+      </div>
+
+      <div class="border item-2 fitness-programs">
+        <div class="item-5 blog-head">
+          <h1>Fitness Programs</h1>
+        </div>
+        <div
+          class="item-5 overline underline programs-list"
+        >
+          <a>CrossFit -></a><br />
+          <a>Yoga -></a><br />
+          <a>Somthing -></a><br />
+          <a>Swimming -></a><br />
+        </div>
+      </div>
+
+      <div class="border item-2 out-trainers">
+        <div class="underline">
+          <h1>Our Trainers</h1>
+        </div>
+        <a>Name|Experience|Score</a>
+        <div
+          class="item-5 trainer-list overline"
+          *ngFor="let trainer of trainerList"
+        >
+          <a
+            >trainer.name| trainer.experience |
+            trainer.score
+          </a>
+        </div>
+        <div
+          class="trainer-img overline item-5 underline featured-trainers"
+        >
+          <h1>Featured Trainers</h1>
+          <img
+            class="fitured-blog crop overline"
+            src="img/trainer.jpg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .container {
+    margin: 10px;
+    padding-bottom: 4em;
+  }
+
+  .item {
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 2em;
+    padding: 3em 1em;
+    text-transform: uppercase;
+  }
+
+  .new-blog-post {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: baseline;
+
+    align-content: center;
+    flex-basis: 26%;
+  }
+
+  .get-fit-now {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-basis: 33%;
+  }
+
+  .out-trainers {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-basis: 30%;
+  }
+
+  .programs-list {
+    width: 100%;
+    padding-top: 5px;
+  }
+
+  .fitness-programs {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: baseline;
+    flex-basis: 30%;
+  }
+
+  .featured-trainers {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    flex-direction: row;
+  }
+  .header {
+    border-radius: 0.2em;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    padding: 0.5em 1em;
+    text-transform: uppercase;
+  }
+
+  .header-butt {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    gap: 10px;
+  }
+
+  .header-butt-element-logo {
+    display: flex;
+    flex-basis: 35%;
+  }
+  .header-butt-element-profile {
+    display: flex;
+    flex-basis: 35%;
+  }
+
+  .banner {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .fit-fusio {
+    font-size: 3em;
+    text-align: center;
+  }
+
+  .logo {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+    text-transform: none;
+    text-align: left;
+    padding-left: 8%;
+  }
+
+  .main-cards {
+    display: flex;
+    justify-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 45px;
+  }
+
+  .nav-buttons {
+    color: #ffffff;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: none;
+    height: auto;
+  }
+  .blog-head {
+    align-content: center;
+    width: 100%;
+    max-height: 25%;
+  }
+  h1 {
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    padding-top: 0.5em;
+    padding-left: 1em;
+  }
+
+  a {
+    font-family:
+      Andale Mono,
+      monospace;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    text-decoration: none;
+    text-transform: none;
+    padding: 20px 5px 5px 5px;
+    padding-top: 5px;
+  }
+
+  .item-1 {
+    background-color: #35a29e85;
+  }
+
+  .item-2 {
+    background-color: #08829550;
+  }
+
+  .item-3 {
+    background-color: #071952;
+  }
+
+  .item-4 {
+    background-color: #f2f7a1;
+  }
+
+  .item-5 {
+    background-color: #ffffffdc;
+  }
+
+  .item-6 {
+    background-image: url("Holographic_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .item-7 {
+    background-color: #ffffff;
+  }
+
+  .frost-1 {
+    background-image: url("1.jpg");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+  }
+
+  .concave {
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .fitured-blog {
+    max-width: 100%;
+  }
+
+  .border {
+    display: fled;
+
+    /* border: 2px solid #333;*/
+  }
+
+  .crop {
+    width: 100%;
+    object-fit: cover;
+    object-position: 25% 25%;
+  }
+
+  .trainer-img {
+    display: flex;
+    flex-wrap: row;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+  }
+
+  .underline {
+    border-bottom: 2px solid #333;
+  }
+
+  .overline {
+    /* border-top: 2px solid #333; */
+  }
+
+  .mainpage {
+    background-color: #ffffff;
+  }
+
+  .rr {
+    font-family:
+      Andale Mono,
+      monospace;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+    text-decoration: none;
+    text-transform: none;
+    padding-top: 5px;
+    padding-right: 5%;
+  }
+
+  .black-tint-img {
+    background-image: url("getfit.jpg");
+    background-color: #0000003b;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 25px;
+    margin: 50px;
+    flex-basis: 86%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+  }
+
+  .motivatio {
+    font-family: Oswald, sans-serif;
+    font-size: 3.7em;
+    line-height: 1.1em;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: none;
+    text-align: left;
+    text-decoration: underline;
+    padding-bottom: 25px;
+  }
+
+  .motivatio-sub-text {
+    font-family: Oswald, sans-serif;
+    color: #ffffff;
+    font-size: 1.3em;
+    line-height: 1em;
+    text-decoration: none;
+    text-transform: none;
+    padding-bottom: 10%;
+  }
+
+  .bottom-button {
+    justify-self: center;
+    align-self: flex-end;
+    margin-bottom: 10px; /* Add some spacing if needed */
+    padding-left: 1em;
+    margin: 20px;
+  }
+
+  .flexy {
+    display: flex;
+  }
+</style>
