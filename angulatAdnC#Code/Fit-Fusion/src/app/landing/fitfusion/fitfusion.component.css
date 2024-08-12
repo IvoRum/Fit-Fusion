@@ -1,0 +1,199 @@
+@font-face {
+  font-family: "Kanit";
+  src: url("/assets/fonts/Kanit/Kanit-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Karla";
+  src: url("/assets/fonts/karla/Karla-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Karla-bold";
+  src: url("/assets/fonts/karla/Karla-Bold.ttf") format("truetype");
+}
+.card-holder {
+  justify-content: center;
+  font-family: "Karla";
+}
+
+.img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 25px;
+}
+
+.butt-img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.profile-pick {
+  border-radius: 25px;
+}
+
+.discription {
+  background: linear-gradient(to top left, #fbe4d8, #a1a5c0);
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 25px;
+}
+
+.introduction {
+  padding-bottom: 10px;
+}
+
+.text-card {
+  padding: 2em;
+  font-weight: 300;
+}
+
+.h-text {
+  font-family: "Karla-bold";
+  font-weight: 500;
+  font-size: 3em;
+  line-height: 1em;
+  padding-bottom: 0.5em;
+}
+
+p {
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1em;
+}
+
+.contact-butt {
+  background-color: #262626;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 0.25em 1em;
+  font-size: 1.5em;
+  font-family: "Kanit";
+}
+
+.fab-butt {
+  width: 3em;
+  height: 3em;
+  display: grid;
+  place-items: center;
+}
+
+.buttons {
+  display: inline-block;
+  height: 100%;
+  vertical-align: bottom;
+}
+
+.linkedIn {
+  background-color: #0077b5;
+}
+
+.github {
+  background-color: black;
+}
+
+.butt-color {
+  background-color: white;
+}
+
+.dialog {
+  max-height: calc(100vh - 20px);
+  font-family: "Karla";
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.content {
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  margin: auto;
+  width: 85%;
+  padding: 2em;
+}
+
+.dialog-img {
+  max-width: 80vw;
+  max-height: 70vw;
+  border-radius: 25px;
+}
+
+.galary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stack {
+  font-family: "Karla";
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.steck-item {
+  background-color: #504c4c;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 5px 10px;
+  margin-top: 5px;
+  margin-right: 5px;
+  font-size: 1.5em;
+}
+
+.period {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+/* gallery.component.css */
+.gallery {
+  position: relative;
+}
+
+.image-container {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container img {
+  transition: transform 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+pointer {
+  cursor: pointer;
+}
+
+button:first-child {
+  left: 10px;
+}
+
+button:last-child {
+  right: 10px;
+}
+
+.contentirino {
+  height: 90%;
+}

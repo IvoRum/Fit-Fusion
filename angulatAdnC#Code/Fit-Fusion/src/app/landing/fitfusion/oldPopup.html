@@ -1,0 +1,31 @@
+<div class="dialog">
+  <div class="center">
+    <div class="title">
+      <h1 class="h-text">Fit Fusion</h1>
+    </div>
+    <div class="stack">
+      <a class="steck-item">Spring boot</a>
+      <a class="steck-item">Angular</a>
+      <a class="steck-item">PosgreSQL</a>
+    </div>
+    <div class="period">From: 24.Sep.2023 To: 14.Oct.2023</div>
+    <div class="content">
+      <p>
+        Fit Fusion is a direct line to personalize health and wellness. It was
+        created as a project for university assignments.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <button (click)="showPrev()">Prev</button>
+      <div class="image-container">
+        <img
+          class="dialog-img"
+          [src]="images[currentIndex]"
+          alt="Gallery Image"
+        />
+      </div>
+      <button (click)="showNext()">Next</button>
+    </div>
+  </div>
+</div>

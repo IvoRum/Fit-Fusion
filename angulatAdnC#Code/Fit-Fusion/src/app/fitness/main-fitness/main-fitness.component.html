@@ -1,0 +1,109 @@
+<div class="mainpage">
+  <div
+    class="container"
+    fxLayout="row wrap"
+    fxLayoutAlign="left"
+    fxLayoutGap="10px"
+    fxLayoutGap.xs="0"
+  >
+    <div
+      [routerLink]="['/fitfusion/demo']"
+      class="header logo fit-fusio"
+      fxFlex="35%"
+    >
+      Fit Fusion
+    </div>
+
+    <button
+      routerLink="/fitfusion/demo/programs"
+      class="border header item-2 nav-buttons"
+      mat-button
+    >
+      Programs
+    </button>
+
+    <button
+      routerLink="/fitfusion/demo/trainers"
+      class="border header item-2 nav-buttons"
+      mat-button
+    >
+      Trainers
+    </button>
+    <div fxFlex="35%" class="rr">
+      <button mat-fab class="border item-2" color="prime" aria-label="Sight in">
+        <mat-icon>person</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div
+    class="container"
+    fxLayout="row wrap"
+    fxLayoutAlign="center"
+    fxLayoutGap="10px"
+    fxLayoutGap.xs="0"
+  >
+    <div fxLayout="row wrap" fxFlex="86%" class="black-tint-img">
+      <div fxLayout="row wrap" fxFlex="33%" class="header item-1">
+        <div class="motivatio">Get Fit Now!</div>
+        <div class="motivatio-sub-text">
+          Are you ready to transform your life and achieve your fitness goals
+          like never before? Try our workout plans for free.<br />
+        </div>
+        <div>
+          <button
+            class="border bottom-button header item-7 nav-buttons"
+            mat-button
+          >
+            Sign up
+          </button>
+          <button
+            class="border bottom-button header item-7 nav-buttons"
+            mat-button
+          >
+            Services
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div fxFlex="26%" class="border">
+      <div fxLayout="row wrap" class="underline item-1">
+        <h1>New Blog post</h1>
+      </div>
+      <img
+        fxLayout="row wrap"
+        class="fitured-blog"
+        src="assets\img\blog1.jpg"
+      />
+      <a>Why Women Over 30 Should Try CrossFit</a>
+    </div>
+    <div fxFlex="30%" class="border item-2">
+      <div fxLayout="row wrap" class="item-5">
+        <h1>Fitness Programs</h1>
+      </div>
+      <div fxLayout="row wrap" class="item-5 overline underline">
+        <a>CrossFit -></a><br />
+        <a>Yoga -></a><br />
+        <a>Somthing -></a><br />
+        <a>Swimming -></a><br />
+      </div>
+    </div>
+    <div class="border item-2" fxFlex="30%">
+      <div class="underline" fxLayout="row wrap">
+        <h1>Our Trainers</h1>
+      </div>
+      <a>Name|Experience|Score</a>
+      <div
+        fxLayout="row wrap"
+        class="item-5 trainer-list overline"
+        *ngFor="let trainer of trainerList"
+      >
+        <a>{{ trainer.name }}|{{ trainer.experience }}|{{ trainer.score }}</a>
+      </div>
+      <div fxLayout="row wrap" class="trainer-img overline item-5 underline">
+        <h1>Featured Trainers</h1>
+        <img class="fitured-blog crop overline" src="assets\img\trainer.jpg" />
+      </div>
+    </div>
+  </div>
+</div>

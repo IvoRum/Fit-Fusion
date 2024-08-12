@@ -1,0 +1,69 @@
+<div class="mainpage">
+  <div
+    class="container"
+    fxLayout
+    fxLayoutAlign="left"
+    fxLayoutGap="10px"
+    fxLayoutGap.xs="0"
+  >
+    <div
+      [routerLink]="['/fitfusion/demo']"
+      class="header logo fit-fusio"
+      fxFlex="35%"
+    >
+      Fit Fusion
+    </div>
+
+    <button
+      routerLink="/fitfusion/demo/programs"
+      class="border header item-2 nav-buttons"
+      mat-button
+    >
+      Programs
+    </button>
+
+    <button
+      routerLink="/fitfusion/demo/trainers"
+      class="border header item-2 nav-buttons"
+      mat-button
+    >
+      Trainers
+    </button>
+    <div fxFlex="35%" class="rr">
+      <button mat-fab class="border item-2" color="prime" aria-label="Sight in">
+        <mat-icon>person</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="container"
+    fxLayout="row wrap"
+    fxLayoutAlign="center"
+    fxLayoutGap="10px"
+    fxLayoutGap.xs="0"
+  >
+    <div class="project-card">
+      <div fxLayout="row wrap" fxLayoutGap="10px grid">
+        <div
+          fxFlex="18%"
+          fxFlex.xs="100%"
+          fxFlex.sm="28%"
+          *ngFor="let card of trenerList"
+        >
+          <mat-card>
+            <mat-card-header *ngIf="card.name">
+              <mat-card-title routerLink="/">{{ card.name }}</mat-card-title>
+
+              <mat-card-subtitle routerLink="/">{{
+                card.score
+              }}</mat-card-subtitle>
+            </mat-card-header>
+            <img class="fitured-blog" mat-card-image src="{{ card.img }}" />
+          </mat-card>
+        </div>
+      </div>
+    </div>
+    <div class="project-card"></div>
+  </div>
+</div>

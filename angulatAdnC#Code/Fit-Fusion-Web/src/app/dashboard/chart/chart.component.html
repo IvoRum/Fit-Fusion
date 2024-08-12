@@ -1,0 +1,10 @@
+<h1>Chart</h1>
+<div *ngFor="let item of chartData" style="display: block">
+  <canvas
+    baseChart
+    [datasets]="item"
+    [labels]="labels"
+    [options]="barChartOptions"
+    [legend]="barChartLegend"
+  ></canvas>
+</div>
